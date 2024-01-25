@@ -4,6 +4,8 @@ FROM redis:latest
 # Install socat
 RUN apt-get update && apt-get install -y socat
 
+CMD ["redis-server", "--save", "60", "1", "--loglevel", "warning"]
+
 # Expose the Redis port
 EXPOSE 8080
 
